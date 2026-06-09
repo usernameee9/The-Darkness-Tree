@@ -4,7 +4,7 @@ addLayer("p", {
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		shadows: new Decimal(0),
+		points: new Decimal(0),
     }},
     color: "#595959",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
@@ -54,7 +54,7 @@ addLayer("p", {
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: false,                     // You can add more variables here to add them to your layer.
-        points: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
+        shadows: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
     }},
 
     color: "#000844",                       // The color for this layer, which affects many elements.
