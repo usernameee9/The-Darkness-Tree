@@ -98,7 +98,6 @@ addLayer("a", {
     achievementPopups: true,
     achievements: {
         11: {
-            image: "discord.png",
             name: "Get me!",
             done() {return true}, // This one is a freebie
             goalTooltip: "How did this happen?", // Shows when achievement is not completed
