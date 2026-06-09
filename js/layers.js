@@ -54,7 +54,7 @@ addLayer("p", {
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: false,                     // You can add more variables here to add them to your layer.
-        darkness: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
+        points: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
     }},
 
     color: "#000844",                       // The color for this layer, which affects many elements.
