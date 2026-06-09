@@ -89,7 +89,7 @@ addLayer("a", {
         unlocked: true,
         points: new Decimal(0),
     }},
-    color: "yellow",
+    color: "#deff09",
     resource: "achievement power", 
     row: "side",
     tooltip() { // Optional, tooltip displays when the layer is locked
