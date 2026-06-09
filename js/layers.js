@@ -53,7 +53,7 @@ addLayer("p", {
     },
         }
     }
-),
+)
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: true,                     // You can add more variables here to add them to your layer.
