@@ -62,7 +62,7 @@ addLayer("d", {
     row: 1,                                 // The row this layer is on (0 is the first row).
 
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
-    baseAmount() { return player.shadows},  // A function to return the current amount of baseResource.
+    baseAmount() { return player.shadows },  // A function to return the current amount of baseResource.
 
     requires: new Decimal(50),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
@@ -77,7 +77,7 @@ addLayer("d", {
         return new Decimal(1)
     },
 
-    layerShown() { return true},          // Returns a bool for if this layer's node should be visible in the tree.
+    layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
 
     upgrades: {
         // Look in the upgrades docs to see what goes here!
