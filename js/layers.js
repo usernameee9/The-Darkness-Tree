@@ -28,7 +28,7 @@ addLayer("p", {
         upgrades: {
         11: {
     title: "Dark",
-    description: "Double your shade gain.",
+    description: "Double your shades gain.",
     cost: new Decimal(1),
         },
                 12: {
