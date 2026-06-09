@@ -84,7 +84,7 @@ addLayer("d", {
      },
      branches: ['s']
 }),
-ddLayer("a", {
+addLayer("a", {
     startData() { return {
         unlocked: true,
         points: new Decimal(0),
