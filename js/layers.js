@@ -50,7 +50,7 @@ addLayer("p", {
     },
         }
     }
-)
+),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: false,                     // You can add more variables here to add them to your layer.
@@ -58,11 +58,11 @@ addLayer("d", {
     }},
 
     color: "#000844",                       // The color for this layer, which affects many elements.
-    resource: "Darkness",            // The name of this layer's main prestige resource.
+    resource: "darkness",            // The name of this layer's main prestige resource.
     row: 1,                                 // The row this layer is on (0 is the first row).
 
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
-    baseAmount() {return player.shadows},  // A function to return the current amount of baseResource.
+    baseAmount() { return player.resource },  // A function to return the current amount of baseResource.
 
     requires: new Decimal(50),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
