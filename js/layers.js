@@ -91,7 +91,7 @@ addLayer("a", {
     }},
     color: "#deff09",
     resource: "achievement power", 
-    row: side,
+    row: "side",
     tooltip() { // Optional, tooltip displays when the layer is locked
         return ("Achievements")
     },
@@ -101,7 +101,6 @@ addLayer("a", {
             name: "Descent",
             done() {return player.s.points.gte(1)},
             tooltip: "The beginning.", // Showed when the achievement is completed
-            onComplete() {console.log("Bork bork bork!")}
         },
     },
     midsection: ["grid", "blank"],
@@ -131,5 +130,4 @@ addLayer("a", {
             return data
         },
     },
-},
-)
+})
