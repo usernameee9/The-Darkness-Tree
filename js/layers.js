@@ -98,22 +98,9 @@ addLayer("a", {
     achievementPopups: true,
     achievements: {
         11: {
-            name: "Get me!",
-            done() {return true}, // This one is a freebie
-            goalTooltip: "How did this happen?", // Shows when achievement is not completed
-            doneTooltip: "You did it!", // Showed when the achievement is completed
-        },
-        12: {
-            name: "Impossible!",
-            done() {return false},
-            goalTooltip: "Mwahahaha!", // Shows when achievement is not completed
-            doneTooltip: "HOW????", // Showed when the achievement is completed
-            textStyle: {'color': '#04e050'},
-        },
-        13: {
-            name: "EIEIO",
-            done() {return player.f.points.gte(1)},
-            tooltip: "Get a farm point.\n\nReward: The dinosaur is now your friend (you can max Farm Points).", // Showed when the achievement is completed
+            name: "Descent",
+            done() {return player.s.points.gte(1)},
+            tooltip: "The beginning.", // Showed when the achievement is completed
             onComplete() {console.log("Bork bork bork!")}
         },
     },
