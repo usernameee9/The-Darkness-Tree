@@ -53,7 +53,7 @@ addLayer("p", {
     },
         }
     }
-)
+),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: true,                     // You can add more variables here to add them to your layer.
@@ -67,7 +67,7 @@ addLayer("d", {
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.shadow },  // A function to return the current amount of baseResource.
 
-    requires: new Decimal(100),              // The amount of the base needed to  gain 1 of the prestige currency.
+    requires: new Decimal(50),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
