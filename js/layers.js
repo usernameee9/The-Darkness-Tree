@@ -33,13 +33,24 @@ addLayer("p", {
         },
                 12: {
     title: "Darker",
-    description: "Points increase points gain",
+    description: "Shades increase shades gain",
     cost: new Decimal(3),
          effect() {
         return player.points.add(1).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
-        },
+  
     },
-
-})
+                   13: {
+    title: "Yet Darker",
+    description: "Shadows increase shades gain",
+    cost: new Decimal(10),
+         effect() {
+        return player[this.layer].points.add(1).pow(0.5)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
+  
+    },
+        }
+    }
+)
