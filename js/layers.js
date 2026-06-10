@@ -108,7 +108,6 @@ addLayer("d", {
         requirementDescription: "10 darkness",
         effectDescription: "Unlocks new upgrades in shadows",
         done() { return player.d.points.gte(10) },
-        onComplete(Unlocks){s,14},
     },
 }
 }
