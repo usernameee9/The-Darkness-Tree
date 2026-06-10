@@ -57,9 +57,8 @@ addLayer("s", {
         return player.d.points.add(1).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
-  unlocked(){false},
-if: hasMilestone('d',11),
-unlocked(){true}
+unlocked(){false},
+onComplete(unlock){d, 11}
     },
         }
     }
@@ -109,7 +108,7 @@ addLayer("d", {
     0: {
         requirementDescription: "10 darkness",
         effectDescription: "Unlocks new upgrades in shadows",
-        done() { return player.d.points.gte(10) }
+        done() { return player.d.points.gte(10) },
     },
 }
 }
