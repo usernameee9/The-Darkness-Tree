@@ -79,7 +79,7 @@ addLayer("d", {
 
     layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
      
-    upgrades: { // Look in the upgrades docs to see what goes here!
+    upgrades: {
     11: {
     title: "The hunger...",
     description: "Double your shades gain.",
