@@ -105,7 +105,7 @@ addLayer("d", {
     },
      branches: ['s'],
      milestones: {
-    1: {
+    0: {
         requirementDescription: "10 darkness",
         effectDescription: "Unlocks bonus shadow content",
         done() { return player.d.points.gte(10) }
