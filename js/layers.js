@@ -53,7 +53,7 @@ addLayer("s", {
     title: "Darkest",
     description: "Darkness increases shades gain",
     cost: new Decimal(30),
-    unlocked() { return hasMilestone('d', 1) },
+    unlocked() {return hasMilestone('d', 0)},
          effect() {
         return player.d.points.add(1).pow(0.5)
     },
