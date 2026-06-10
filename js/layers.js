@@ -14,6 +14,7 @@ addLayer("s", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
+        if (hasUpgrade('d', 12)) gain = gain.times(2)
         mult = new Decimal(1)
         return mult
     },
@@ -25,7 +26,7 @@ addLayer("s", {
         upgrades: {
         11: {
     title: "Dark",
-    description: "Double your shades gain.",
+    description: "Doubles your shades gain.",
     cost: new Decimal(1),
         },
                 12: {
@@ -82,8 +83,13 @@ addLayer("d", {
     upgrades: {
     11: {
     title: "The hunger...",
-    description: "Double your shades gain.",
+    description: "Doubles your shades gain.",
     cost: new Decimal(1),
+        },
+                12: {
+    title: "Deeper down",
+    description: "Doubles your shadow gain.",
+    cost: new Decimal(3),
         },
     },
      branches: ['s'],
