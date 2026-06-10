@@ -114,7 +114,7 @@ addLayer("a", {
         },
         12: {
             name: "Darkness expanding",
-            done() {return player.d.points.gte(1)},
+            done() {return player.s.points.gte(1)},
             tooltip: "The darkness continues.", // Showed when the achievement is completed
         },
     },
