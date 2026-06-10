@@ -49,6 +49,17 @@ addLayer("s", {
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
+    14: {
+    title: "Darkest",
+    description: "Darkness increases shades gain",
+    cost: new Decimal(10),
+         effect() {
+        return player.d.points.add(1).pow(0.5)
+    },
+    effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
+unlocked(){false},
+unlocked() {return hasMilestone(d, 0)}
+    },
     }
 }
 ),
@@ -93,6 +104,13 @@ addLayer("d", {
     },
     },
      branches: ['s'],
+     milestones: {
+    0: {
+        requirementDescription: "10 darkness",
+        effectDescription: "Unlocks bonus shadow content",
+        done() { return player.d.points.gte(10) }
+    },
+}
 }
 ),
 addLayer("a", {
