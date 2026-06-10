@@ -82,7 +82,15 @@ addLayer("d", {
     upgrades: {
         // Look in the upgrades docs to see what goes here!
      },
-     branches: ['s']
+     branches: ['s'],
+     milestones: {
+    0: {
+        requirementDescription: "10 darkness",
+        effectDescription: "unlocks new upgrades in shadow",
+        done() { return player.d.points.gte(10) }
+    },
+    etc
+},
 }),
 addLayer("a", {
     startData() { return {
