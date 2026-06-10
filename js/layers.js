@@ -88,7 +88,7 @@ addLayer("d", {
     },
     12: {
     title: "Deeper down",
-    description: "Doubles your shadow gain.",
+    description: "Doubles your shadows gain.",
     cost: new Decimal(3),
     },
     },
