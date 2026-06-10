@@ -49,17 +49,8 @@ addLayer("s", {
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
-    14: {
-    title: "Darkest",
-    description: "Darkness increases shades",
-    cost: new Decimal(10),
-         effect() {
-        return player.d.points.add(1).pow(0.5)
-    },
-    effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
-    },
-        }
     }
+}
 ),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
