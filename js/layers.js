@@ -79,19 +79,22 @@ addLayer("d", {
 
     layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
      
-    upgrades: {
-        // Look in the upgrades docs to see what goes here!
-     },
+    upgrades: { // Look in the upgrades docs to see what goes here!
+    11: {
+    title: "The hunger...",
+    description: "Double your shades gain.",
+    cost: new Decimal(1),
+        },
+    },
      branches: ['s'],
      milestones: {
-    0: {
+    11: {
         requirementDescription: "10 darkness",
         effectDescription: "unlocks new upgrades in shadow",
         done() { return player.d.points.gte(10) }
     },
-    etc
-},
-}),
+  },
+),
 addLayer("a", {
     startData() { return {
         unlocked: true,
