@@ -38,7 +38,7 @@ addLayer("s", {
          effect() {
         return player.points.add(1).pow(0.5)
     },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
+    effectDisplay(){ return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
                    13: {
