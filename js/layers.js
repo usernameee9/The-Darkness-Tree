@@ -58,7 +58,8 @@ addLayer("s", {
     },
     effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
 unlocked(){false},
-onComplete(unlock){d, 11}
+onComplete(){d, 11},
+ unlocked(){true}
     },
         }
     }
