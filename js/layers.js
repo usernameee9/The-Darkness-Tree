@@ -56,9 +56,8 @@ addLayer("s", {
          effect() {
         return player.d.points.add(1).pow(0.5)
     },
-    effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
-unlocked(){false},
-unlocked() {return hasMilestone(d, 1)}
+    effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect
+unlocked() {return hasMilestone(d, 0)}
     },
     }
 }
@@ -105,7 +104,7 @@ addLayer("d", {
     },
      branches: ['s'],
      milestones: {
-    1: {
+    0: {
         requirementDescription: "10 darkness",
         effectDescription: "Unlocks bonus shadow content",
         done() { return player.d.points.gte(10) }
