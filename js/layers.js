@@ -24,8 +24,8 @@ addLayer("s", {
     row: 0, // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
         upgrades: {
-            rows: 2,
-            cols: 3,
+            rows: 1,
+            cols: 4,
         11: {
     title: "Dark",
     description: "Doubles your shades gain.",
