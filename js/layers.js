@@ -58,8 +58,6 @@ addLayer("s", {
     },
     effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
 unlocked(){false},
-onComplete(){d, 11},
-unlocked(){true}
     },
         }
     }
@@ -110,6 +108,7 @@ addLayer("d", {
         requirementDescription: "10 darkness",
         effectDescription: "Unlocks new upgrades in shadows",
         done() { return player.d.points.gte(10) },
+        onComplete(Unlocks){s,14},
     },
 }
 }
