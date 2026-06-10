@@ -15,6 +15,7 @@ addLayer("s", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('d', 12)) mult = new Decimal(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -111,11 +112,6 @@ addLayer("a", {
             name: "Descent",
             done() {return player.s.points.gte(1)},
             tooltip: "The beginning.", // Showed when the achievement is completed
-        },
-        12: {
-            name: "Darkness expanding",
-            done() {return player.d.points.gte(1)},
-            tooltip: "The darkness continues.", // Showed when the achievement is completed
         },
     },
     midsection: ["grid", "blank"],
