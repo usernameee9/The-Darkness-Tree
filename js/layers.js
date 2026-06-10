@@ -57,7 +57,7 @@ addLayer("s", {
         return player.d.points.add(1).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect
-unlocked() {return hasMilestone(d, 0)}
+unlocked() { return hasMilestone(d, 0) }
     },
     }
 }
