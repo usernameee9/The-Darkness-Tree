@@ -58,7 +58,8 @@ addLayer("s", {
     },
     effectDisplay() { return format(upgradeEffect(d, this.id))+"x" }, // Add formatting to the effect 
   unlocked(){false},
-  hasMilestone(){d,11},unlocked(){true},
+if: hasMilestone('d',11),
+unlocked(){true}
     },
         }
     }
