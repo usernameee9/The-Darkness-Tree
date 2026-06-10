@@ -86,7 +86,7 @@ addLayer("d", {
     description: "Doubles your shades gain.",
     cost: new Decimal(1),
         },
-                12: {
+    12: {
     title: "Deeper down",
     description: "Doubles your shadow gain.",
     cost: new Decimal(3),
@@ -111,6 +111,11 @@ addLayer("a", {
         11: {
             name: "Descent",
             done() {return player.s.points.gte(1)},
+            tooltip: "The beginning.", // Showed when the achievement is completed
+        },
+        12: {
+            name: "Darkness expanding",
+            done() {return player.d.points.gte(1)},
             tooltip: "The beginning.", // Showed when the achievement is completed
         },
     },
