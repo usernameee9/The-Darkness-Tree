@@ -60,7 +60,6 @@ addLayer("s", {
 unlocked() { return hasMilestone('d', 0) }
     },
     },
-}
 ),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
