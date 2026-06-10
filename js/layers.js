@@ -93,6 +93,13 @@ addLayer("d", {
     },
     },
      branches: ['s'],
+     milestones: {
+    11: {
+        requirementDescription: "10 darkness",
+        effectDescription: "Unlocks new features in shadows",
+        done() { return player.d.points.gte(10) }
+    },
+}
 }
 ),
 addLayer("a", {
