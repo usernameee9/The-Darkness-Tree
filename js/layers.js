@@ -45,6 +45,7 @@ addLayer("s", {
     title: "Yet Darker",
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
+    unlocked() {return hasUpgrade("d",13)},
          effect() {
         return player[this.layer].points.add(1).pow(0.5)
     },
