@@ -25,7 +25,7 @@ addLayer("s", {
     layerShown(){return true},
         upgrades: {
             rows: 2,
-            cols: 3,
+            cols: 4,
         11: {
     title: "Dark",
     description: "Doubles your shades gain.",
@@ -51,7 +51,7 @@ addLayer("s", {
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
-                 21: {
+                 14: {
     title: "Darkest",
     description: "Darkness increases shades gain",
     cost: new Decimal(30),
