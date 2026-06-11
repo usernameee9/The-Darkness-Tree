@@ -103,10 +103,6 @@ addLayer("a", {
     color: "#deff09",
     resource: "achievement power", 
     row: "side",
-    base: 1,
-    type: "static",
-    baseResource: "shades", 
-    baseAmount() {return player.points},
     tooltip() { // Optional, tooltip displays when the layer is locked
         return ("Achievements")
     },
@@ -116,13 +112,11 @@ addLayer("a", {
             name: "Descent",
             done() {return player.s.points.gte(1)},
             tooltip: "The beginning. (get a shadow)",
-            onComplete() {DoReset(this.layer)}
         },
         12: {
             name: "A real achievement",
             done() {return player.d.points.gte(10)},
             tooltip: "Now your getting somewhere (get 10 darkness)", // Showed when the achievement is completed
-            onComplete() {DoReset(this.layer)}
         },
     },
     midsection: ["grid", "blank"],
