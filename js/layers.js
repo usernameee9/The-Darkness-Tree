@@ -24,7 +24,6 @@ addLayer("s", {
     row: 0, // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
         upgrades: {
-            maxRows: 3,
         11: {
     title: "Dark",
     description: "Doubles your shades gain.",
@@ -40,7 +39,7 @@ addLayer("s", {
     effectDisplay(){ return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
-                   13: {
+                   21: {
     title: "Yet Darker",
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
