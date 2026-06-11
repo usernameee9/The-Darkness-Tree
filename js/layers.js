@@ -111,7 +111,8 @@ addLayer("a", {
         11: {
             name: "Descent",
             done() {return player.s.points.gte(1)},
-            tooltip: "The beginning. (get a shadow)", // Showed when the achievement is completed
+            tooltip: "The beginning. (get a shadow)",
+            onComplete() {DoReset(this.layer)}
         },
         12: {
             name: "A real achievement",
