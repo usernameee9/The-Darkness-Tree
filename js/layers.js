@@ -105,6 +105,8 @@ addLayer("a", {
     row: "side",
     base: 1,
     type: "static",
+    baseResource: "shades", 
+    baseAmount() {return player.points},
     tooltip() { // Optional, tooltip displays when the layer is locked
         return ("Achievements")
     },
