@@ -78,7 +78,7 @@ addLayer("d", {
         return new Decimal(1)
     },
 
-    layerShown() { return player.s.points.gte(30) },          // Returns a bool for if this layer's node should be visible in the tree.
+    layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
      
     upgrades: {
     11: {
