@@ -116,7 +116,7 @@ addLayer("a", {
         12: {
             name: "A real achievement",
             done() {return player.d.points.gte(10)},
-            tooltip: "Get 10 darkness.\n\nReward: The darkness spreads (Gain double the shades))", // Showed when the achievement is completed
+            tooltip: "Get 10 darkness.\n\nReward: The darkness spreads (Gain double the shades)", // Showed when the achievement is completed
         },
     },
     midsection: ["grid", "blank"],
