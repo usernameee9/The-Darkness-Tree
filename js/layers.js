@@ -51,7 +51,7 @@ addLayer("s", {
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
-                 14: {
+                 22: {
     title: "Darkest",
     description: "Darkness increases shades gain",
     cost: new Decimal(15),
