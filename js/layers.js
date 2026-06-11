@@ -117,7 +117,7 @@ addLayer("a", {
             name: "A real achievement",
             done() {return player.d.points.gte(10)},
             tooltip: "Now your getting somewhere (get 10 darkness)", // Showed when the achievement is completed
-            onComplete() {DoReset(a)}
+            onComplete() {DoReset(this.layer)}
         },
     },
     midsection: ["grid", "blank"],
