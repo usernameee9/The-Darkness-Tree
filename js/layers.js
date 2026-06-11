@@ -24,6 +24,7 @@ addLayer("s", {
     row: 0, // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
         upgrades: {
+            maxRows: 3,
         11: {
     title: "Dark",
     description: "Doubles your shades gain.",
@@ -52,7 +53,7 @@ addLayer("s", {
                  14: {
     title: "Darkest",
     description: "Darkness increases shades gain",
-    cost: new Decimal(30),
+    cost: new Decimal(15),
     unlocked() {return hasMilestone('d', 0)},
          effect() {
         return player.d.points.add(1).pow(0.5)
