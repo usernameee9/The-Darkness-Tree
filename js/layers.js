@@ -41,7 +41,7 @@ addLayer("s", {
     effectDisplay(){ return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
     },
-                   21: {
+                   13: {
     title: "Yet Darker",
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
@@ -50,16 +50,6 @@ addLayer("s", {
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
-    },
-                 22: {
-    title: "Darkest",
-    description: "Darkness increases shades gain",
-    cost: new Decimal(15),
-    unlocked() {return hasMilestone('d', 0)},
-         effect() {
-        return player.d.points.add(1).pow(0.5)
-    },
-    effectDisplay() { return format(upgradeEffect('d', this.id))+"x" }, // Add formatting to the effect
     },
     },
 }
@@ -105,13 +95,6 @@ addLayer("d", {
     },
     },
      branches: ['s'],
-     milestones: {
-        0: {
-        requirementDescription: "10 darkness",
-        effectDescription: "Unlocks bonus shadow content",
-        done() { return player.d.points.gte(10) }
-    },
-}
 }
 ),
 addLayer("a", {
@@ -130,7 +113,13 @@ addLayer("a", {
         11: {
             name: "Descent",
             done() {return player.s.points.gte(1)},
-            tooltip: "The beginning.", // Showed when the achievement is completed
+            tooltip: "The beginning. (get a shadow)", // Showed when the achievement is completed
+        },
+        12: {
+            name: "A real achievement",
+            done() {return player.d.points.gte(10)},
+            tooltip: "Now your getting somewhere (get 10 darkness)", // Showed when the achievement is completed
+            onComplete() {DoReset(a)}
         },
     },
     midsection: ["grid", "blank"],
