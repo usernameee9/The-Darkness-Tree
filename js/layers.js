@@ -55,10 +55,10 @@ addLayer("s", {
     description: "Darkness increase shades gain",
     cost: new Decimal(30),
     unlocked() {
-       return hasUpgrade("d", 13);
+       return hasUpgrade("d", 13)
     },
          effect() {
-        return player.d.points.add(1).pow(0.5)
+        return player.s.points.add(1).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect('d', this.id))+"x" }, // Add formatting to the effect 
   
