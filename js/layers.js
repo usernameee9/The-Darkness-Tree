@@ -24,9 +24,9 @@ addLayer("s", {
     infoboxes: {
     lore: {
         title: "Reasoning",
-        body() { return "You decided that this world is filled with too much light so you decided to purge it of the light" },
+        body() { return "You decided that this world is filled with too much light so you decided to purge it of the light and you must start with the very beginning." },
     },
-}
+},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
         upgrades: {
