@@ -21,10 +21,16 @@ addLayer("s", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+    infoboxes: {
+    lore: {
+        title: "Reasoning",
+        body() { return "You decided that this world is filled with too much light so you decided to purge it of the light" },
+    },
+}
     row: 0, // Row the layer is in on the tree (0 is the first row)
     layerShown(){return true},
         upgrades: {
-            rows: 1,
+            rows: 2,
             cols: 4,
         11: {
     title: "Dark",
@@ -46,7 +52,7 @@ addLayer("s", {
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
          effect() {
-        return player[this.layer].points.add(2).pow(0.5)
+        return player[this.layer].points.add(4).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
         },
@@ -58,7 +64,7 @@ addLayer("s", {
        return hasUpgrade("d", 13)
     },
          effect() {
-        return player.d.points.add(2).pow(0.5)
+        return player.d.points.add(4).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
@@ -107,7 +113,7 @@ addLayer("d", {
     },
         13: {
     title: "Consumption",
-    description: "Unlocks more shadow upgrades.",
+    description: "Unlocks more shadow content.",
     cost: new Decimal(15),
     },
     },
