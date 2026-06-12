@@ -46,7 +46,7 @@ addLayer("s", {
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
          effect() {
-        return player[this.layer].points.add(1).pow(0.5)
+        return player[this.layer].points.add(1).pow(1)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
         },
@@ -58,7 +58,7 @@ addLayer("s", {
        return hasUpgrade("d", 13)
     },
          effect() {
-        return player.d.points.add(1).pow(0.5)
+        return player.d.points.add(1).pow(1)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
   
