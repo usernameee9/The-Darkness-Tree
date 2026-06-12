@@ -60,7 +60,7 @@ addLayer("s", {
          effect() {
         return player.d.points.add(1).pow(0.5)
     },
-    effectDisplay() { return format(upgradeEffect("d", this.id))+"x" }, // Add formatting to the effect 
+    effectDisplay() { return format(upgradeEffect(player.d.points, this.id))+"x" }, // Add formatting to the effect 
   
     },
     },
