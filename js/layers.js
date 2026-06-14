@@ -117,6 +117,14 @@ addLayer("d", {
     cost: new Decimal(15),
     },
     },
+    milestones: {
+        0: {
+        requirementDescription: "100 shadows",
+        effectDescription: "automatically gain shadows (these will not reset from darkness)",
+        done() { return player.s.points.gte(100) },
+        unlocked(){ return hasUpgrade("d", 13) }
+    },
+},
      branches: ['s'],
 }
 ),
