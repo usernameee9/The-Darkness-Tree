@@ -37,6 +37,7 @@ buyables: {
             player[this.layer].points = player[this.layer].points.sub(this.cost())
             setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
         },
+        unlocked(){return hasUpgrade('s',15)}
     },
 },
     row: 0, // Row the layer is in on the tree (0 is the first row)
