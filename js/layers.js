@@ -100,7 +100,7 @@ addLayer("d", {
     },
     },
 },
-    branches ['s'],
+    branches: ['s'],
 ),
 addLayer("a", {
     startData() { return {
