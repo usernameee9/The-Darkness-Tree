@@ -99,8 +99,8 @@ addLayer("d", {
     cost: new Decimal(3),
     },
     },
+branches: ['s']
 },
-    branches: ['s'],
 ),
 addLayer("a", {
     startData() { return {
