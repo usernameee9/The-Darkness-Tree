@@ -44,7 +44,7 @@ function getPointGen() {
 	if (hasUpgrade('s', 11)) gain = gain.times(2)
     if (hasUpgrade('s', 12)) gain = gain.times(upgradeEffect('s', 12))
 	if (hasUpgrade('s', 13)) gain = gain.times(upgradeEffect('s', 13))
-	if (hasUpgrade('s', 14)) gain = gain.times(upgradeEffect('s', 14))
+	if (hasUpgrade('s', 14)) gain = gain.times(3)
 	if (hasUpgrade('d', 11)) gain = gain.times(2)
 	if (hasAchievement('a', 12)) gain = gain.times(2)
 	return gain

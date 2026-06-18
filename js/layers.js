@@ -15,6 +15,7 @@ addLayer("s", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('s',14)) mult = mult.times(3)
         if (hasUpgrade('d',12)) mult = mult.times(2)
         return mult
     },
@@ -55,6 +56,11 @@ addLayer("s", {
         return player[this.layer].points.add(4).pow(0.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
+        },
+               14: {
+    title: "Triple the trouble",
+    description: "Triples your shades and shadows gain.",
+    cost: new Decimal(30),
         },
     },
 }
