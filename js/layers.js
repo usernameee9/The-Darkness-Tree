@@ -31,7 +31,7 @@ addLayer("s", {
 buyables: {
     11: {
         cost(x) { return new Decimal(100).mul(x) },
-        display() { return "Blah getBuyableAmount(this.layer, this.id))" },
+        display() { return "Blah" },
         canAfford() { return player[this.layer].points.gte(this.cost()) },
         buy() {
             player[this.layer].points = player[this.layer].points.sub(this.cost())
@@ -142,12 +142,17 @@ addLayer("a", {
             name: "Descent",
             done() {return player.s.points.gte(1)},
             tooltip: "Get a shadow.",
+            onComplete() {player.a.points = player.a.points.add(1)}
         },
         12: {
             name: "Wow this took a while",
             done() {return player.d.points.gte(1)},
             tooltip: "Get 1 darkness.", // Showed when the achievement is completed
+            onComplete() {player.a.points = player.a.points.add(1)}
         },
+    },
+    effect() {
+        return player.points.add(1).pow(0.5)
     },
     midsection: ["grid", "blank"],
     grid: {
