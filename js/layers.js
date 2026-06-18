@@ -129,7 +129,7 @@ addLayer("a", {
         12: {
             name: "Wow this took a while",
             done() {return player.d.points.gte(1)},
-            tooltip: "Get 1 darkness.\n\nReward: The darkness spreads (Gain double the shades)", // Showed when the achievement is completed
+            tooltip: "Get 1 darkness.", // Showed when the achievement is completed
         },
     },
     midsection: ["grid", "blank"],
