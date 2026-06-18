@@ -56,19 +56,6 @@ addLayer("s", {
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
         },
-                   14: {
-    title: "Darkest",
-    description: "Darkness increase shades gain",
-    cost: new Decimal(30),
-    unlocked() {
-       return hasUpgrade("d", 13)
-    },
-         effect() {
-        return player.d.points.add(4).pow(0.5)
-    },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect 
-  
-    },
     },
 }
 ),
@@ -85,7 +72,7 @@ addLayer("d", {
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.s.points },  // A function to return the current amount of baseResource.
 
-    requires: new Decimal(50),              // The amount of the base needed to  gain 1 of the prestige currency.
+    requires: new Decimal(50000),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
@@ -111,22 +98,9 @@ addLayer("d", {
     description: "Doubles your shadows gain.",
     cost: new Decimal(3),
     },
-        13: {
-    title: "Consumption",
-    description: "Unlocks more shadow content.",
-    cost: new Decimal(15),
-    },
-    },
-    milestones: {
-        0: {
-        requirementDescription: "100 shadows",
-        effectDescription: "automatically gain shadows (these will not reset from darkness)",
-        done() { return player.s.points.gte(100) },
-        unlocked(){ return hasUpgrade("d", 13) }
     },
 },
-     branches: ['s'],
-}
+    branches ['s'],
 ),
 addLayer("a", {
     startData() { return {
@@ -147,9 +121,9 @@ addLayer("a", {
             tooltip: "Get a shadow.",
         },
         12: {
-            name: "A real achievement",
-            done() {return player.d.points.gte(10)},
-            tooltip: "Get 10 darkness.\n\nReward: The darkness spreads (Gain double the shades)", // Showed when the achievement is completed
+            name: "Wow this took a while",
+            done() {return player.d.points.gte(1)},
+            tooltip: "Get 1 darkness.\n\nReward: The darkness spreads (Gain double the shades)", // Showed when the achievement is completed
         },
     },
     midsection: ["grid", "blank"],
