@@ -152,7 +152,7 @@ addLayer("a", {
         },
     },
     effect() {
-        return player.points.add(1).pow(0.5)
+        return player.a.points.add(1).pow(0.5)
     },
     midsection: ["grid", "blank"],
     grid: {
