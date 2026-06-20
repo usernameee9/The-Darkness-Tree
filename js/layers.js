@@ -25,13 +25,14 @@ addLayer("s", {
     infoboxes: {
     lore: {
         title: "Reasoning",
-        body() { return "You decided that this world is filled with too much light so you decided to purge it of the light and you must start with the very beginning." },
-    },
+        body() { return "You decided that this world is filled with too much light, and that it must all be removed COMPLETELY." },
 },
+    },
 buyables: {
     11: {
+        title: "Basic Buyable",
         cost(x) { return new Decimal(100).mul(x) },
-        display() { return "Blah" },
+        display() { return "Blah", player[this.layer].points.gte(this.cost()) },
         canAfford() { return player[this.layer].points.gte(this.cost()) },
         buy() {
             player[this.layer].points = player[this.layer].points.sub(this.cost())
@@ -80,7 +81,7 @@ buyables: {
     cost: new Decimal(50),
         },
     },
-}
+    }
 ),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
