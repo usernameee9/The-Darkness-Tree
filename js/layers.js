@@ -147,6 +147,12 @@ addLayer("a", {
             onComplete() {player.a.points = player.a.points.add(1)}
         },
         12: {
+            name: "There's gonna be a lot more of these",
+            done() {return hasUpgrade('s',15)},
+            tooltip: "Get the fifth shadow upgrade.", // Showed when the achievement is completed
+            onComplete() {player.a.points = player.a.points.add(1)}
+        },
+        13: {
             name: "Wow this took a while",
             done() {return player.d.points.gte(1)},
             tooltip: "Get 1 darkness.", // Showed when the achievement is completed
@@ -154,7 +160,7 @@ addLayer("a", {
         },
     },
     effect(x) {
-        return player.a.points.add(1).pow(0.5)
+        return player.a.points.add(1).pow(0.25)
     },
     effectDescription(){
         return "multiplying point gain by " + format(tmp[this.layer].effect)
