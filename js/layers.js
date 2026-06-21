@@ -16,6 +16,8 @@ addLayer("s", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('s',14)) mult = mult.times(3)
+        if (hasUpgrade('s',21)) mult = mult.times(2)
+        if (hasUpgrade('s',23)) mult = mult.times(4)
         if (hasUpgrade('d',12)) mult = mult.times(2)
         return mult
     },
@@ -31,7 +33,7 @@ addLayer("s", {
 buyables: {
     11: {
         title: "Basic Buyable",
-        cost(x) { return new Decimal(50).mul(x) },
+        cost(x) { return new Decimal(100).mul(x) },
         display() { return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Basic Buyable" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost Shades gain by x" + format(buyableEffect(this.layer, this.id)) },
         canAfford() { return player[this.layer].points.gte(this.cost()) },
         buy() {
@@ -81,8 +83,34 @@ buyables: {
     description: "Unlocks a buyable.",
     cost: new Decimal(50),
         },
+    
+                           21: {
+    title: "When are we getting a new layer",
+    description: "Doubles shadow gain.",
+    cost: new Decimal(500),
     },
-    }
+                               22: {
+    title: "Still nothing?",
+    description: "Doubles shades gain.",
+    cost: new Decimal(1000),
+    },
+                                   23: {
+    title: "Is there even another layer?",
+    description: "Quadruples shadow gain.",
+    cost: new Decimal(2000),
+    },
+                                       24: {
+    title: "Not even a new feature?",
+    description: "Doubles shades gain, again.",
+    cost: new Decimal(4000),
+    },
+                                           25: {
+    title: "Finally a new layer",
+    description: "Unlocks darkness.",
+    cost: new Decimal(10000),
+    },
+    },
+}
 ),
 addLayer("d", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
@@ -93,11 +121,11 @@ addLayer("d", {
     color: "#000844",                       // The color for this layer, which affects many elements.
     resource: "darkness",            // The name of this layer's main prestige resource.
     row: 1,                                 // The row this layer is on (0 is the first row).
-
+    layerShown(){return hasAchievement('a', 13)},
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.s.points },  // A function to return the current amount of baseResource.
 
-    requires: new Decimal(50000),              // The amount of the base needed to  gain 1 of the prestige currency.
+    requires: new Decimal(100000),              // The amount of the base needed to  gain 1 of the prestige currency.
                                             // Also the amount required to unlock the layer.
 
     type: "normal",                         // Determines the formula used for calculating prestige currency.
@@ -152,11 +180,17 @@ addLayer("a", {
             tooltip: "Get the fifth shadow upgrade.", // Showed when the achievement is completed
             onComplete() {player.a.points = player.a.points.add(1)}
         },
-        13: {
-            name: "Wow this took a while",
-            done() {return player.d.points.gte(1)},
-            tooltip: "Get 1 darkness.", // Showed when the achievement is completed
+                13: {
+            name: "Finally a new layer unlocked",
+            done() {return hasUpgrade('s',25)},
+            tooltip: "Get the tenth shadow upgrade.", // Showed when the achievement is completed
             onComplete() {player.a.points = player.a.points.add(1)}
+        },
+        14: {
+            name: "Wow this took a while",
+            done() {return player.d.points.gte(3)},
+            tooltip: "Get 2 darkness.", // Showed when the achievement is completed
+            onComplete() {player.a.points = player.a.points.add(2)}
         },
     },
     effect(x) {
