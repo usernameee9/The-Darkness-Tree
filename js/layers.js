@@ -31,13 +31,14 @@ addLayer("s", {
 buyables: {
     11: {
         title: "Basic Buyable",
-        cost(x) { return new Decimal(100).mul(x) },
+        cost(x) { return new Decimal(50).mul(x) },
         display() { return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " Basic Buyable" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost Shades gain by x" + format(buyableEffect(this.layer, this.id)) },
         canAfford() { return player[this.layer].points.gte(this.cost()) },
         buy() {
             player[this.layer].points = player[this.layer].points.sub(this.cost())
             setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
         },
+        effect(x) { return new Decimal(1).add(x || getBuyableAmount(this.layer, this.id)).pow(1)},
         unlocked(){return hasUpgrade('s',15)}
     },
 },
