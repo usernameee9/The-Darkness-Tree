@@ -130,7 +130,7 @@ addLayer("d", {
     color: "#000844",                       // The color for this layer, which affects many elements.
     resource: "darkness",            // The name of this layer's main prestige resource.
     row: 1,                                 // The row this layer is on (0 is the first row).
-    layerShown(){return hasAchievement('a', 13)},
+    unlocked(){return hasAchievment('a', 13)},
     baseResource: "shadows",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.s.points },  // A function to return the current amount of baseResource.
 
