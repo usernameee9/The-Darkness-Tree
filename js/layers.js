@@ -17,7 +17,7 @@ addLayer("s", {
         mult = new Decimal(1)
         if (hasUpgrade('s',14)) mult = mult.times(3)
         if (hasUpgrade('s',21)) mult = mult.times(2)
-        if (hasUpgrade('s',23)) mult = mult.times(4)
+        if (hasUpgrade('s',23)) mult = mult.times(2)
         if (hasUpgrade('d',12)) mult = mult.times(2)
         return mult
     },
@@ -102,7 +102,7 @@ buyables: {
     },
                                    23: {
     title: "Is there even another layer?",
-    description: "Quadruples shadow gain.",
+    description: "Doubles shadow gain.",
     cost: new Decimal(2000),
     unlocked(){return hasUpgrade('s',22)}
     },
