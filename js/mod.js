@@ -41,6 +41,7 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 	let gain = new Decimal(1)
+	gain = gain.times(tmp.a.effect)
 	if (hasUpgrade('s', 11)) gain = gain.times(2)
     if (hasUpgrade('s', 12)) gain = gain.times(upgradeEffect('s', 12))
 	if (hasUpgrade('s', 13)) gain = gain.times(upgradeEffect('s', 13))

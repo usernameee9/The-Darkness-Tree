@@ -153,7 +153,7 @@ addLayer("a", {
             onComplete() {player.a.points = player.a.points.add(1)}
         },
     },
-    effect() {
+    effect(x) {
         return player.a.points.add(1).pow(0.5)
     },
     midsection: ["grid", "blank"],
