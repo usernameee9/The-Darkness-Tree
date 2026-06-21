@@ -156,6 +156,9 @@ addLayer("a", {
     effect(x) {
         return player.a.points.add(1).pow(0.5)
     },
+    effectDescription(){
+        return "multiplying point gain by " + format(tmp[this.layer].effect)
+},
     midsection: ["grid", "blank"],
     grid: {
         maxRows: 3,
