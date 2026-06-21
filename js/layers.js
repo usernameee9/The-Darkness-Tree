@@ -58,6 +58,7 @@ buyables: {
     title: "Darker",
     description: "Shades increase shades gain",
     cost: new Decimal(3),
+    unlocked(){return hasUpgrade('s',11)},
          effect() {
         return player.points.add(1).pow(0.5)
     },
@@ -68,6 +69,7 @@ buyables: {
     title: "Yet Darker",
     description: "Shadows increase shades gain",
     cost: new Decimal(10),
+    unlocked(){return hasUpgrade('s',12)},
          effect() {
         return player[this.layer].points.add(4).pow(0.5)
     },
@@ -77,37 +79,44 @@ buyables: {
     title: "Triple the trouble",
     description: "Triples your shades and shadows gain.",
     cost: new Decimal(30),
+    unlocked(){return hasUpgrade('s',13)}
         },
                        15: {
     title: "New features",
     description: "Unlocks a buyable.",
     cost: new Decimal(50),
+    unlocked(){return hasUpgrade('s',14)}
         },
     
                            21: {
     title: "When are we getting a new layer",
     description: "Doubles shadow gain.",
     cost: new Decimal(500),
+    unlocked(){return hasUpgrade('s',15)}
     },
                                22: {
     title: "Still nothing?",
     description: "Doubles shades gain.",
     cost: new Decimal(1000),
+    unlocked(){return hasUpgrade('s',21)}
     },
                                    23: {
     title: "Is there even another layer?",
     description: "Quadruples shadow gain.",
     cost: new Decimal(2000),
+    unlocked(){return hasUpgrade('s',22)}
     },
                                        24: {
     title: "Not even a new feature?",
     description: "Doubles shades gain, again.",
     cost: new Decimal(4000),
+    unlocked(){return hasUpgrade('s',23)}
     },
                                            25: {
     title: "Finally a new layer",
     description: "Unlocks darkness.",
     cost: new Decimal(10000),
+    unlocked(){return hasUpgrade('s',24)}
     },
     },
 }
